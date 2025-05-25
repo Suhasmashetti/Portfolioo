@@ -90,9 +90,9 @@ const contactConfig = {
 
 
 const socialprofils = {
-    github: "https://github.com",
+    github: "https://https://github.com/Suhasmashetti.com",
     linkedin: "https://linkedin.com",
-    twitter: "https://twitter.com",
+    twitter: "https://https://x.com/supaman696.com",
 };
 export {
     meta,
