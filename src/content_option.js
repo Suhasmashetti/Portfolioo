@@ -80,15 +80,14 @@ const dataportfolio = [{
 ];
 
 const contactConfig = {
-    YOUR_EMAIL: "suhasmashety@gmail.com",
-    YOUR_FONE: "6302293716",
-    description: "",
-    // creat an emailjs.com account 
-    // check out this tutorial https://www.emailjs.com/docs/examples/reactjs/
-    YOUR_SERVICE_ID: "service_kh3mmrq",
-    YOUR_TEMPLATE_ID: "template_14fmyei",
-    YOUR_USER_ID: "MOVZhssHXcmKIDrJ-",
+  YOUR_EMAIL: process.env.REACT_APP_YOUR_EMAIL,
+  YOUR_FONE: process.env.REACT_APP_YOUR_FONE,
+  description: process.env.REACT_APP_CONTACT_DESCRIPTION,
+  YOUR_SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  YOUR_TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  YOUR_USER_ID: process.env.REACT_APP_EMAILJS_USER_ID,
 };
+
 
 const socialprofils = {
     github: "https://github.com",
