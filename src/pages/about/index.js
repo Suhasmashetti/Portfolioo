@@ -21,7 +21,7 @@ export const About = () => {
 
         <Row className="my-5 pt-md-3">
           <Col lg="8">
-            <h1 className="display-4 mb-4 py-1">About me</h1>
+            <h1 className="display-4 mb-4 py-1">About_me</h1>
             <hr className="t_border my-1 ml-0 text-left" />
           </Col>
         </Row>
@@ -41,7 +41,7 @@ export const About = () => {
        {/* Wallet Address Section */}
 <Row className="my-5">
   <Col lg="5">
-    <h3 className="color_sec py-1">Wallet Addresses</h3>
+    <h3 className="color_sec py-1">Wallet_Addresses</h3>
   </Col>
   <Col lg="7" className="d-flex flex-column gap-3">
     {Object.entries(Waddress).map(([key, value]) => (
@@ -55,7 +55,7 @@ export const About = () => {
             navigator.clipboard.writeText(value);
           }}
         >
-          Copy
+         🫆
         </button>
       </div>
     ))}

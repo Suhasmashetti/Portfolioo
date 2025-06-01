@@ -10,11 +10,11 @@ const introdata = {
     title: "I’m Suhas",
     animated: {
         first: "I love coding",
-        second: "I build cool websites",
+        second: "I build websites",
         third: "I love playing FPS games"
     },
-    description: "I'm a full-stack developer passionate about web development and diving deep into Web3, especially building with Solana. I enjoy turning ideas into functional, real-world apps — even if debugging drives me a little mad. When I'm not wrestling with code, you'll probably find me recharging with a few rounds of FPS games. ",
-    your_img_url: "https://plus.unsplash.com/premium_photo-1680390566813-da64a1ef46f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bWFydmVsfGVufDB8fDB8fHww",
+    description: "Hii i am a FullStack Developer, Web3 Dev #{Solana,Ethereum}, Valorant Esports player (rank: Immortal) ",
+    your_img_url: "https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?q=80&w=2008&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 };
 
 const dataabout = {
@@ -27,7 +27,6 @@ const Waddress = {
     solana: "GE3v86q7SLWy7Z7VCSqrRUbZXVMYiYqo7uxper5ZXvS6",
     ethereum:"0x2EEaA0344F87953F5e913C62F93c9F3254cf9f18"
 }
-
 
 const skills = [
   { name: "JavaScript", icon: "fab fa-js" },
