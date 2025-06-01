@@ -1,25 +1,32 @@
 import React, { useState } from "react";
-import * as emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 import "./style.css";
 import { Helmet, HelmetProvider } from "react-helmet-async";
-import { meta } from "../../content_option";
 import { Container, Row, Col, Alert } from "react-bootstrap";
-import { contactConfig } from "../../content_option";
+
+const contactConfig = {
+  YOUR_SERVICE_ID: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+  YOUR_TEMPLATE_ID: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+  YOUR_USER_ID: process.env.REACT_APP_EMAILJS_USER_ID,
+  YOUR_EMAIL: process.env.REACT_APP_YOUR_EMAIL,
+  YOUR_FONE: process.env.REACT_APP_YOUR_FONE,
+  description: process.env.REACT_APP_CONTACT_DESCRIPTION,
+};
 
 export const ContactUs = () => {
-  const [formData, setFormdata] = useState({
+  const [formData, setFormData] = useState({
     email: "",
     name: "",
     message: "",
     loading: false,
     show: false,
-    alertmessage: "",
+    alertMessage: "",
     variant: "",
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setFormdata((prevData) => ({ ...prevData, loading: true }));
+    setFormData((prev) => ({ ...prev, loading: true }));
 
     const templateParams = {
       from_name: formData.email,
@@ -37,26 +44,24 @@ export const ContactUs = () => {
       )
       .then(
         (result) => {
-          console.log(result.text);
-          setFormdata((prevData) => ({
-            ...prevData,
-            loading: false,
-            alertmessage: "SUCCESS! Thank you for your message",
-            variant: "success",
-            show: true,
-            name: "",
+          setFormData({
             email: "",
+            name: "",
             message: "",
-          }));
+            loading: false,
+            show: true,
+            alertMessage: "SUCCESS! Thank you for your message",
+            variant: "success",
+          });
+          document.getElementsByClassName("co_alert")[0]?.scrollIntoView();
         },
         (error) => {
-          console.log(error.text);
-          setFormdata((prevData) => ({
-            ...prevData,
+          setFormData((prev) => ({
+            ...prev,
             loading: false,
-            alertmessage: `Failed to send! ${error.text}`,
-            variant: "danger",
             show: true,
+            alertMessage: `Failed to send! ${error.text}`,
+            variant: "danger",
           }));
           document.getElementsByClassName("co_alert")[0]?.scrollIntoView();
         }
@@ -64,10 +69,10 @@ export const ContactUs = () => {
   };
 
   const handleChange = (e) => {
-    setFormdata({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [e.target.name]: e.target.value,
-    });
+    }));
   };
 
   return (
@@ -75,8 +80,8 @@ export const ContactUs = () => {
       <Container>
         <Helmet>
           <meta charSet="utf-8" />
-          <title>{meta.title} | Contact</title>
-          <meta name="description" content={meta.description} />
+          <title>Contact | Your Website</title>
+          <meta name="description" content={contactConfig.description} />
         </Helmet>
         <Row className="mb-5 mt-3 pt-md-3">
           <Col lg="8">
@@ -84,6 +89,7 @@ export const ContactUs = () => {
             <hr className="t_border my-4 ml-0 text-left" />
           </Col>
         </Row>
+
         <Row className="sec_sp">
           <Col lg="12">
             {formData.show && (
@@ -91,14 +97,16 @@ export const ContactUs = () => {
                 variant={formData.variant}
                 className="rounded-0 co_alert"
                 onClose={() =>
-                  setFormdata((prevData) => ({ ...prevData, show: false }))
+                  setFormData((prev) => ({ ...prev, show: false }))
                 }
                 dismissible
+                aria-live="polite"
               >
-                <p className="my-0">{formData.alertmessage}</p>
+                <p className="my-0">{formData.alertMessage}</p>
               </Alert>
             )}
           </Col>
+
           <Col lg="5" className="mb-5">
             <h3 className="color_sec py-4">Get in touch</h3>
             <address>
@@ -108,7 +116,7 @@ export const ContactUs = () => {
               </a>
               <br />
               <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") && (
+              {contactConfig.YOUR_FONE && (
                 <p>
                   <strong>Phone:</strong> {contactConfig.YOUR_FONE}
                 </p>
@@ -116,8 +124,13 @@ export const ContactUs = () => {
             </address>
             <p>{contactConfig.description}</p>
           </Col>
+
           <Col lg="7" className="d-flex align-items-center">
-            <form onSubmit={handleSubmit} className="contact__form w-100">
+            <form
+              onSubmit={handleSubmit}
+              className="contact__form w-100"
+              aria-busy={formData.loading}
+            >
               <Row>
                 <Col lg="6" className="form-group">
                   <input
@@ -170,6 +183,7 @@ export const ContactUs = () => {
           </Col>
         </Row>
       </Container>
+
       <div className={formData.loading ? "loading-bar" : "d-none"}></div>
     </HelmetProvider>
   );

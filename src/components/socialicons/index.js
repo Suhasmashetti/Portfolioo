@@ -18,7 +18,6 @@ const ICON_MAPPING = {
   default: FaCircle,
   github: FaGithub,
   instagram: FaInstagram,
-  linkedin: FaLinkedin,
   snapchat: FaSnapchatGhost,
   tiktok: FaTiktok,
   twitter: FaTwitter,

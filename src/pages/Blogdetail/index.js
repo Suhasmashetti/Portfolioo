@@ -7,8 +7,7 @@ const datablogs = [
   {
     id: 1,
     img: "/assets/blogdetails/nginx.jpg",
-    description: "How nginx works.",
-    content: "NGINX(pronounced as 'Engine-X') is a high performance webserver,it acts as a reverse proxy, load Balancer and HTTP cache.",
+    description: "Have you ever wondered how websites like YouTube or GitHub deliver pages so fast? One of the key players behind the scenes is a tool called Nginx. It’s a super-efficient web server that helps websites load faster and handle tons of users. Let’s break it down in a simple way ",
   },
   {
     id: 2,
@@ -48,7 +47,9 @@ export const BlogDetail = () => {
       <button onClick={() => navigate(-1)} className="btn btn-secondary mb-3">
         ← Back
       </button>
-      <h2 >{blog.description}</h2>
+      <div className="bg-light px-2 py-3 rounded-2 ">
+        <p >{blog.description}</p>
+      </div>
       <div className = "text-center"><img src={blog.img} alt={blog.description} className="img-fluid my-3 text-center" /></div>
       <div className="py-2"><p>{blog.content}</p></div>
     </div>

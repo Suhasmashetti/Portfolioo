@@ -22,7 +22,7 @@ export const Home = () => {
           <div className="text order-2 order-lg-1 h-100 d-lg-flex justify-content-center">
             <div className="align-self-center ">
               <div className="intro mx-auto">
-                <h1> ⚠️ portfolio is Under construction(lot of undone work)</h1>
+                <h1> ⚠️ Portfolio is Under construction(lot of undone work) and recommend to use dark mode </h1>
                 <h2 className="mb-1x">{introdata.title}</h2>
                 <h1 className="fluidz-48 mb-1x">
                   <Typewriter
