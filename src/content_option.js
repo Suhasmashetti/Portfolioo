@@ -76,7 +76,7 @@ const dataportfolio = [{
     },
     {
         img:"/assets/projectImages/apple.png",
-        description: "portfolio",
+        description: "website",
         link: "https://apple-website-xyz.vercel.app/"
     }
 ];
