@@ -56,22 +56,6 @@ const datablogs = [{
         description: "Docker Explanation",
         link: "/blogs/2",
     },
-    {
-        img: "/assets/blogImages/nextvsreact.png",
-        description: "Next js VS React js",
-        para: "next js is more seo optimizd than react", 
-        link: "/blogs/3",
-    },
-    {
-        img: "/assets/blogImages/kubernetes.jpeg",
-        description: "Kubernetes Explanation",
-        link: "/blogs/4",
-    },
-    {
-        img: "https://plus.unsplash.com/premium_photo-1678743317032-1539bd9463d8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fGRvcGFtaW5lfGVufDB8fDB8fHww",
-        description: "Dopamine Supremacy",
-        link: "/blogs/5",
-    }
 ];
 
 
@@ -89,6 +73,11 @@ const dataportfolio = [{
         img:"/assets/projectImages/portfolio.png",
         description: "portfolio",
         link: "https://msxyz.vercel.app/"
+    },
+    {
+        img:"/assets/projectImages/apple.png",
+        description: "portfolio",
+        link: "https://apple-website-xyz.vercel.app/"
     }
 ];
 

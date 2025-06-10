@@ -47,7 +47,7 @@ export const BlogDetail = () => {
       <button onClick={() => navigate(-1)} className="btn btn-secondary mb-3">
         ← Back
       </button>
-      <div className="bg-light px-2 py-3 rounded-2 ">
+      <div className="bg-black px-4 py-3 rounded-2 text-white ">
         <p >{blog.description}</p>
       </div>
       <div className = "text-center"><img src={blog.img} alt={blog.description} className="img-fluid my-3 text-center" /></div>
